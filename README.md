@@ -50,7 +50,7 @@ Engram is a **VS Code extension** that creates a persistent memory layer for Cla
 
 ```bash
 # Clone the repo
-git clone https://github.com/AbiKhade/Engram.git
+git clone https://github.com/Abhion24/EngRam.git
 cd Engram
 
 # Install dependencies
@@ -83,16 +83,16 @@ code --install-extension engram-1.0.0.vsix
 <div align="center">
 
 ### Dashboard — System Overview
-<img src="https://raw.githubusercontent.com/AbiKhade/Engram/main/screenshots/dashboard.png" alt="Engram Dashboard showing KPI cards, health gauge, memory accrual chart" width="800" />
+<img src="https://raw.githubusercontent.com/Abhion24/EngRam/main/screenshots/dashboard.png" alt="Engram Dashboard showing KPI cards, health gauge, memory accrual chart" width="800" />
 
 ### Memories — Search, Filter, Pin
-<img src="https://raw.githubusercontent.com/AbiKhade/Engram/main/screenshots/memories.png" alt="Engram Memories page with search, type filters, and detail panel" width="800" />
+<img src="https://raw.githubusercontent.com/Abhion24/EngRam/main/screenshots/memories.png" alt="Engram Memories page with search, type filters, and detail panel" width="800" />
 
 ### Context Preview — Token Budget Visualization  
-<img src="https://raw.githubusercontent.com/AbiKhade/Engram/main/screenshots/context.png" alt="Context injection preview showing pinned axioms and dynamic retrieval" width="800" />
+<img src="https://raw.githubusercontent.com/Abhion24/EngRam/main/screenshots/context.png" alt="Context injection preview showing pinned axioms and dynamic retrieval" width="800" />
 
 ### Settings — Full Configuration
-<img src="https://raw.githubusercontent.com/AbiKhade/Engram/main/screenshots/settings.png" alt="Settings page with API config, sliders, and data management" width="800" />
+<img src="https://raw.githubusercontent.com/Abhion24/EngRam/main/screenshots/settings.png" alt="Settings page with API config, sliders, and data management" width="800" />
 
 </div>
 
