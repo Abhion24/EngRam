@@ -1,0 +1,12 @@
+.vscode/**
+src/**
+dashboard/src/**
+dashboard/node_modules/**
+node_modules/**
+.gitignore
+tsconfig.json
+esbuild.config.mjs
+**/*.ts
+**/*.map
+prd_extracted.txt
+DESIGN.md

@@ -1,0 +1,152 @@
+{
+  "name": "engram",
+  "displayName": "Engram — Memory OS for Claude Code",
+  "description": "Persistent memory layer for Claude Code. Indexes your codebase, remembers decisions across sessions, and injects context automatically.",
+  "version": "1.0.0",
+  "publisher": "abhikhade",
+  "author": {
+    "name": "Abhi Khade"
+  },
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhikhade/engram"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "memory",
+    "ai",
+    "context",
+    "persistent",
+    "coding-assistant"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "engram.openDashboard",
+        "title": "Engram: Open Memory Dashboard",
+        "icon": "$(brain)"
+      },
+      {
+        "command": "engram.indexCodebase",
+        "title": "Engram: Index Codebase"
+      },
+      {
+        "command": "engram.showMemoryCount",
+        "title": "Engram: Show Memory Count"
+      },
+      {
+        "command": "engram.exportMemories",
+        "title": "Engram: Export Memories (.engram)"
+      },
+      {
+        "command": "engram.importMemories",
+        "title": "Engram: Import Memories (.engram)"
+      },
+      {
+        "command": "engram.clearAllMemories",
+        "title": "Engram: Clear All Memories"
+      }
+    ],
+    "configuration": {
+      "title": "Engram",
+      "properties": {
+        "engram.claudeApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your Anthropic Claude API key for embeddings and memory extraction.",
+          "order": 1
+        },
+        "engram.autoIndex": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically index the codebase when the extension activates.",
+          "order": 2
+        },
+        "engram.tokenBudget": {
+          "type": "number",
+          "default": 2000,
+          "minimum": 500,
+          "maximum": 8000,
+          "description": "Maximum tokens for context injection into Claude's system prompt.",
+          "order": 3
+        },
+        "engram.confidenceThreshold": {
+          "type": "number",
+          "default": 0.6,
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "description": "Minimum confidence score for memories to be injected (0.0-1.0).",
+          "order": 4
+        },
+        "engram.dashboardPort": {
+          "type": "number",
+          "default": 6173,
+          "description": "Port for the Engram web dashboard.",
+          "order": 5
+        },
+        "engram.enableSessionRecording": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically record memories from Claude Code sessions.",
+          "order": 6
+        },
+        "engram.memoryDecayDays": {
+          "type": "number",
+          "default": 30,
+          "minimum": 7,
+          "maximum": 365,
+          "description": "Days before unpinned memories begin losing relevance weight.",
+          "order": 7
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "engram",
+          "title": "Engram",
+          "icon": "$(brain)"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "compile": "tsc -p ./",
+    "build": "node esbuild.config.mjs --production",
+    "watch": "node esbuild.config.mjs --watch",
+    "build:dashboard": "cd dashboard && npm run build",
+    "dev:dashboard": "cd dashboard && npm run dev",
+    "package": "npx @vscode/vsce package --no-dependencies",
+    "lint": "eslint src --ext ts"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "@types/uuid": "^9.0.7",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "esbuild": "^0.19.0",
+    "typescript": "^5.3.0"
+  }
+}
